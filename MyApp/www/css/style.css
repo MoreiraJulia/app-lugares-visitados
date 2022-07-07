@@ -1,3 +1,9 @@
 div#map {
   height: 250px;
 }
+h1.text-center.title-topo {
+  margin: 25px;
+}
+.button {
+  text-align: center;
+}
