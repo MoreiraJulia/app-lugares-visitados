@@ -1,49 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localização Atual</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+</head>
 <body>
-<p id="demo">Clique no botão para obter sua localização:</p>
-<button onclick="getLocation()">Clique aqui</button>
-<div id="mapholder"></div>
-<script>
-var x=document.getElementById("demo");
-function getLocation()
-  {
-  if (navigator.geolocation)
-    {
-    navigator.geolocation.getCurrentPosition(showPosition,showError);
-    }
-  else{x.innerHTML="Geolocation is not supported by this browser.";}
-  }
- 
-function showPosition(position)
-  {
-  var latlon=position.coords.latitude+","+position.coords.longitude;
- 
-  var img_url="http://maps.googleapis.com/maps/api/staticmap?center="
-  +latlon+"&zoom=14&size=400x300&sensor=false";
-  document.getElementById("mapholder").innerHTML="<img src='"+img_url+"'>";
-  }
- 
-function showError(error)
-  {
-  switch(error.code)
-    {
-    case error.PERMISSION_DENIED:
-      x.innerHTML="Usuário rejeitou a solicitação de Geolocalização."
-      break;
-    case error.POSITION_UNAVAILABLE:
-      x.innerHTML="Localização indisponível."
-      break;
-    case error.TIMEOUT:
-      x.innerHTML="O tempo da requisição expirou."
-      break;
-    case error.UNKNOWN_ERROR:
-      x.innerHTML="Algum erro desconhecido aconteceu."
-      break;
-    }
-  }
-</script>
+  <h1>Teste Aqui</h1>
+  <button onclick="PegarPosicao();">Click Aqui</button>
+
+
+  <div id="map"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOukz3X1iJzs9OJZe22BNdy11iU4nd16U" type="text/javascript"></script>
+  <script src="js/app.js"></script>
+
 </body>
 </html>
-
-
