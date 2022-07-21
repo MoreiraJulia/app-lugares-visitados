@@ -1,5 +1,4 @@
 // // Função para buscar a localidade
-
  function PegarPosicao() {
      var options = {
          enableHighAccuracy: true,
@@ -25,7 +24,6 @@
          };
          var map = new google.maps.Map(document.getElementById("map"), mapOptions);
     
-        
 
          // Pega as localidades e repete
          new google.maps.Marker( 
@@ -47,9 +45,6 @@
          alert('codigo: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
      }
   }
-
-
-
 
 // Função para buscar a localidade
 

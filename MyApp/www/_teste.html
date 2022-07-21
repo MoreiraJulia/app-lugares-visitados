@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Open Sans', sans-serif;
+}
+
+header{
+  align-items: center;
+  background: #1abc9c;
+  color: rgba(255,255,255,0.95);
+  display: flex;
+  justify-content: center;
+  height: 4rem;
+}
+
+header h1{
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+main{
+  padding: 2rem;
+}
+
+main h1{
+  font-size: 1.2rem;
+}
+
+main h1,
+main h2{
+  margin-bottom: 2rem;
+}
+
+main p{
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+#mapa,
+#mapa-marcadores{
+  height: 400px;
+  margin-top: 4rem;
+}
+
+#markers{
+  margin-top: 4rem;
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>GOOGLE MAPS API</h1>
+  </header>
+  
+  <main>
+    <h1>Exemplos de utilização </h1>
+    <p>Analise o código JS e veja como podemos utilizar a API de mapas da Google. Para este exemplo, busquei a latitude e a longitude referente à localização atual do usuário. Com esses dados, criei um mapa e uma marcador utilizando a <a href="https://developers.google.com/maps/?hl=pt-br">API do Google Maps</a>.</p>
+    <p>Vale ressaltar que o próprio navegador avisa e pede permissão ao usuário para que a localização atual do dispositivo seja utilizada. Para saber mais sobre Geolocalização, acesse <a href="https://www.w3schools.com/html/html5_geolocation.asp">este link</a></p>
+    <div id="mapa"></div> 
+   
+    <section id="markers">
+      <h2>Múltiplos marcadores</h2>  
+      
+      <p>Exemplo de mapa com múltiplos marcadores. Ao selecionar cada um dos marcadores, uma janela de informações é exibida sobre o mapa.</p>
+      
+      <div id="mapa-marcadores"></div> 
+    </section>
+    
+  </main>
+  
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOukz3X1iJzs9OJZe22BNdy11iU4nd16U" type="text/javascript"></script>
+  
+  <script src="js/rotas.js"></script>
+</body>
+</html>
+

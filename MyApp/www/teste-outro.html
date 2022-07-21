@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Lexend", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  background-color: var(--color-background);
+  /* // border: 3px solid green; */
+}
+
+.content {
+  background: var(--color-background); 
+  box-shadow: var(--box-shadown);
+  margin: auto;
+  padding: 10px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+  #header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+    /* // border: 1px solid lime; */
+  }
+    input {
+      margin: 10px 5px;
+      padding: 10px 10px 10px 15px;
+      border-radius: 30px;
+      border: 0;
+      background-color: var(--color-background); 
+      box-shadow: var(--box-shadown-inset);
+      color: var(--font-color);
+      /* // inset -3px -3px 5px 3px #ecfcff,inset 3px 3px 7px 3px #cde2e7; */
+    }
+
+    span {
+      color: var(--font-color);
+      margin-left: 5px;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px 10px;
+    /* // border: 2px solid #27b3ff; */
+      color: var(--font-color); 
+      font-size: 2rem;
+      transform: translateY(-15px);
+      /* // border: 1px solid lime; */
+    }
+
+    .digit {
+      display: flex;
+      flex-direction: column;
+      /* // border: 2px solid lime; */
+
+     
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        color: var(--font-color); 
+      }
+
+    .label {
+      display: flex;
+      width: 180px;
+      justify-content: space-around;
+    }
+
+    .inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      height: 6rem;
+      width: 4rem;
+      padding: 15px;
+      margin: 0 5px;
+      /* // background: var(--color-background); // #e1f8fd;
+      // box-shadow: var(--box-shadown); */
+      background-color: var(--color-background); 
+      box-shadow: var(--box-shadown-inset);
+      /* // border: 1px solid lime; */
+        display: flex;
+        flex-direction: column;
+        font-size: 3rem;
+        color: var(--font-color); 
+/* 
+        // &:hover {
+        //   animation: transY 0.5s linear;
+        //   // opacity: 0;
+        // } */
+
+        }
+
+  .labels {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: antiquewhite;
+    border: 1px solid lime;
+
+    /* // span {
+    //   // margin: auto;
+    // } */
+  }
+
+  .control-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    button {
+      border-radius: 20px;
+      border: 0px;
+      padding: 10px;
+      margin: 0 10px 10px;
+      background-color: var(--color-background);
+      box-shadow: var(--box-shadown);
+      color: var(--font-color); 
+      font-weight: bold;
+    }
+
+    .btn-pressed,
+    #btn-stop:active {
+      background-color: var(--color-background); 
+      box-shadow: var(--box-shadown-inset);
+  }
+
+
+.drop {
+  animation: dropnum 0.5s ease-out forwards;
+}
+
+@keyframes dropnum {
+  0% {
+    transform: translateY(-35px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(30px);
+    opacity: 0.7;
+  }
+  70% {
+    transform: translateY(-10px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.theme-light {
+  --color-background: #c6d2e0; 
+  --color-background2: linear-gradient(#ffffff73 5%, #c6d2e0 50%, #a6b0bb 90%);
+  --font-color: #2e4a6c; 
+  --box-shadown: 3px 3px 7px #a6b0bb, -3px -3px 7px #ffffff73;
+  --box-shadown2: 3px 3px 7px #a6b0bb73;
+  --box-shadown-inset: inset -3px -3px 7px #ffffff73, inset 3px 3px 7px #a6b0bb;
+  --box-convex: linear-gradient(145deg, #d4e1f0, #b2bdca);
+  --box-concave: linear-gradient(145deg, #b2bdca, #d4e1f0);
+}
+.theme-dark {
+  --color-background: #34444d;
+  --font-color: #c6d2e0; 
+  --box-shadown: -3px -3px 7px #465b6773, 3px 3px 5px #1b232773;
+  --box-shadown2: 3px 3px 3px #1b232773;
+  --box-shadown-inset: inset -3px -3px 7px #465b6773,
+    inset 3px 3px 5px #1b232773;
+  --box-convex: linear-gradient(145deg, #384952, #2f3d45);
+  --box-concave: linear-gradient(145deg, #2f3d45, #384952);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 34px;
+  /* // margin-left: 10px; */
+  border-radius: 34px;
+  box-shadow: var(--box-shadown);
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 38px;
+  /* // background-color: var(--color-background);
+  // box-shadow: var(--box-shadown); */
+  margin: 0 0 10px 60px;
+  border-radius: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* // background-color: var(--color-background); */
+  background: var(--box-concave);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.slider:before {
+  background: var(--box-convex);
+  /* // box-shadow: var(--box-shadown-inset); */
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.2s;
+  width: 26px;
+}
+
+/* // input:checked + .slider {
+//    background-color: var(--color-background);
+// }
+
+// input:focus + .slider {
+//   box-shadow: var(--box-shadown-inset); //0 0 1px #2196f3;
+// } */
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  /* // background: var(--color-background); */
+  background: var(--box-convex);
+  /* // background-repeat: no-repeat;
+  // background-position: center; */
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+    </style>
+</head>
+<body>
+    <html lang="en" class="theme-dark">
+
+<div class="content">
+  <div id="header-box">
+    <span> It's The Final Countdown </span>
+    <div>
+      <input id="date" type="date" />
+      <input id="time" type="time" value="23:59" />
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="digit">
+      <div id="days" class="label">
+        <div class="inner">
+          <span>0</span>
+        </div>
+        <div class="inner">
+          <span>0</span>
+        </div>
+      </div>
+      <span>Dias</span>
+    </div>
+
+    <span>:</span>
+
+    <div class="digit">
+      <div id="hours" class="label">
+        <div class="inner">
+          <span>0</span>
+        </div>
+        <div class="inner">
+          <span>0</span>
+        </div>
+      </div>
+      <span>Horas</span>
+    </div>
+
+    <span>:</span>
+
+    <div class="digit">
+      <div id="minutes" class="label">
+        <div class="inner">
+          <span>0</span>
+        </div>
+        <div class="inner">
+          <span>0</span>
+        </div>
+      </div>
+      <span>Minutos</span>
+    </div>
+
+    <span>:</span>
+
+    <div class="digit">
+      <div id="seconds" class="label">
+        <div class="inner">
+          <span>0</span>
+        </div>
+        <div class="inner">
+          <span>0</span>
+        </div>
+      </div>
+      <span>Segundos</span>
+    </div>
+  </div>
+  <div class="control-btn">
+    <button id="btn-play" onclick="start()">Iniciar</button>
+    <button id="btn-pause" onclick="pause()">Pausar</button>
+    <button id="btn-stop" onclick="stop()">Parar</button>
+    <div class="switch-container">
+      <label id="switch" class="switch">
+        <input type="checkbox" onchange="toggleTheme()" id="slider">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </div>
+</div>
+<script src="index.js"></script> 
+    
+</body>
+</html>
