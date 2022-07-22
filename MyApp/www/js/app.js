@@ -13,8 +13,18 @@ function PegarPosicao() {
 
        var watchID = navigator.geolocation.getCurrentPosition(Sucesso, Erro, options);
       function Sucesso(position) {
-          alert('Longitude: ' + longitude + '\n' + 'Latitude: ' + latitude);
-          alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: '  + position.coords.longitude);
+        //   alert('Longitude: ' + longitude + '\n' + 'Latitude: ' + latitude);
+        //   alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: '  + position.coords.longitude);
+
+            if(longitude == '' & latitude == ''){
+                longitude = position.coords.longitude;
+                latitude = position.coords.latitude;
+                console.log('Ops, parece que você não adicionou nada');
+                // var latLong = new google.maps.LatLng(-22.7525479, -47.329845);
+                var latLong = new google.maps.LatLng(-22.7565068, -47.3217348);
+            }else{
+                console.log('Tudo certo!');
+            }
 
          //  var longitude = position.coords.longitude;
          //  var longitude = document.getElementById("longitude");
