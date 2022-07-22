@@ -6,16 +6,16 @@ function PegarPosicao() {
 
     console.log(longitude, latitude);
 
-
       var options = {
           enableHighAccuracy: true,
           maximumAge: 3600000
       }
 
-      var watchID = navigator.geolocation.getCurrentPosition(Sucesso, Erro, options);
+       var watchID = navigator.geolocation.getCurrentPosition(Sucesso, Erro, options);
       function Sucesso(position) {
-          //alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: '  + position.coords.longitude);
-          alert('Longitude: ' + longitude + '<br>'+ 'Latitude: ' + latitude);
+          alert('Longitude: ' + longitude + '\n' + 'Latitude: ' + latitude);
+          alert('Latitude: ' + position.coords.latitude + '\n' + 'Longitude: '  + position.coords.longitude);
+
          //  var longitude = position.coords.longitude;
          //  var longitude = document.getElementById("longitude");
         //  var latitude = position.coords.latitude;
